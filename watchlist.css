@@ -1,0 +1,37 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+body{
+    background: black;
+    color:aliceblue;
+}
+
+.get{
+    display: grid;
+    grid-auto-rows: 2fr;
+    grid-auto-columns: 1fr;
+}
+
+.cell{
+    margin: 0;
+    width: 20vw;
+}
+
+img{
+    display: block;
+}
+
+.poster{
+    height: 300px;
+   object-fit: contain;
+}
+
+article{
+    padding: 2em;
+    padding-left: 0;
+}
+
+.add{
+    display: none;
+}
