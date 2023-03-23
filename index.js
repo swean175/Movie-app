@@ -6,6 +6,9 @@ let searchHistory = []
 let film = ''
 let searchedFilm = {}
 let watchList = JSON.parse(localStorage.getItem("watchlist")) //  -------------------getting watchlist data from local storage
+if (watchList === null){
+    watchList = []
+}
 
 
 searchBtn.addEventListener('click', () => {    //------------------------getting data from API and running searchResult()
@@ -17,8 +20,8 @@ fetch (`http://www.omdbapi.com/?t=${inp.value}&page=2&apikey=f882b954&`)
 function searchResult(title,year,rate,min,genre,describsion,poster){ 
 
 film = `<section><img class="poster" src="${poster}" alt="poster ${title}"><div class="spec">
-<div class="top"><h3>${title}</h3><h4>⭐ ${rate}</h4><h4>${year}</h4></div>
-<div class="bottom"><h4>${min}  ${genre} </h4> <button type="button" id="${title}Btn" class="add" data-add="${title}">Watchlist❌</button> </div></div> 
+<div class="top"><h3>${title}</h3><h4>⭐ ${rate} </h4><h4> ${year}</h4></div>
+<div class="bottom"><h4>${min}  ${genre} </h4> <div class="add-section"><button type="button" id="${title}Btn" class="add" data-add="${title}">❌</button></div> </div></div> 
 <article class="describsion">${describsion}</article></section>`
 //-------------------Store data in string to display it as html
 

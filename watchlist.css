@@ -7,15 +7,24 @@ body{
     color:aliceblue;
 }
 
+h1{
+    text-align: center;
+    margin: 2em;
+}
+
 .get{
-    display: grid;
-    grid-auto-rows: 2fr;
-    grid-auto-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .cell{
+    flex-grow: 1;
     margin: 0;
     width: 20vw;
+}
+
+.top{
+    display: flex;
 }
 
 img{
