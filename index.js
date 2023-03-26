@@ -39,9 +39,10 @@ function render(){
 document.addEventListener('click', (e)=>{  //-------------------- click watchlist button event
 
     if ( e.target.attributes[0].value === "button"){
-       watchList.unshift(searchedFilm.title)
+        if (searchedFilm.title !== undefined){
+             watchList.unshift(searchedFilm.title)
        localStorage.setItem( "watchlist",`${JSON.stringify(watchList)}`) //  -------------  if event is equal type "button" ads this title to watchlist and saves in local storage
        let store = new Movie(searchedFilm)
     store.save()} // ----------------  saves string (html) into local storage using class property function exported from class.js
-})
+}})
 
