@@ -1,7 +1,7 @@
 import Movie  from './class.js'
 
 const inp = document.querySelector('input')
-const searchBtn = document.getElementById('search')
+const searchBtn = document.getElementById('search-btn')
 let searchHistory = []
 let film = ''
 let searchedFilm = {}
