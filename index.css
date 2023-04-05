@@ -4,6 +4,7 @@
 
 body{
     color: white;
+    font-family: 'Inter', sans-serif;
 }
 
 .wrapper{
@@ -14,14 +15,15 @@ body{
 
 .background{
     position: absolute;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     margin: 201px;
     margin-top: 420px;
 }
 
 .background>img{
-
+    margin: auto;
+display: block;
 }
 
 header{
@@ -29,6 +31,8 @@ header{
     padding:46px;
     background-image: url('images/back1.png');
     background-color: #0E0E0E;
+    display: flex;
+    align-items: center;
 }
 
 .watch{
@@ -50,14 +54,17 @@ h1, h2 {
 }
 
 a{
-    color:aliceblue;
+    color: aliceblue;
 }
 
 section{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+place-content:center;
+grid-template-columns: auto auto auto;
+grid-template-rows: auto auto auto;
     margin: 3em auto;
-    width: 25%;
+    width: 100%;
+    color:black;
 }
 
 .search-bar{
@@ -81,6 +88,7 @@ input{
 .search-btn{
     height: 100%;
     width: 116px;
+    font-size: 0.87rem;
     margin-left: 0px;
     border:1px solid #D1D5DB;
     background-color:#F9FAFB;
@@ -98,48 +106,78 @@ input{
     color: transparent;
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0);
     -webkit-background-clip: text;
-       -moz-background-clip: text;
-            background-clip: text;
-            transition: 0.2;
+    -moz-background-clip: text;
+        background-clip: text;
+        transition: 0.2;
 }
 
 .add:hover{
-    background-color: white;
+    background-color: green;
     transform: scale(1.3) rotateZ(45deg);
     cursor: pointer;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.523);
 }
 
 .add-section{
-    display: block;
-    width: 100px;
+    display: flex;
+    align-items: baseline; 
+    gap: 1.5em;
     height: 20px;
-    margin: 0;
     right:0;
-    margin-left: auto;
+    margin-left: 30px;
     margin-bottom: 2em;
     padding: 0.8em 0;
 }
 
-.add-section::before{
+/* .add-section::before{
     content: "Watchlist ";
-}
+} */
 
 .bottom{
     display: flex;
     flex-direction: row;
-    gap:0.2em;
+    align-items: baseline;
+    gap:1em;
 }
 
-.bottom>h4{
-    margin: 0.2em 0;
+.bottom>h5{
+    margin: 0 0 0 20px;
+    grid-area: 2 / 2 / 3 / 4;
+    display: flex;
+    align-items: center;
 }
 
 .top{
     display: flex;
     gap:4em;
+    margin: 0 0 0 20px;
+    align-items: center;
+    grid-area: 1 / 2 / 2 / 4;
+    height: 3em;
+    font-weight: 200;
 }
 
-article{
+article.describsion{
     width: fit-content;
+    grid-area: 3 / 2 / 4 / 4;
+    font-size: 0.87rem;
+    font-weight: 0;
+    line-height: 20px;
+    margin: 8px 0 0 20px;
+    color:#0e0e0e9d;
+}
+
+.poster{
+    width: 99px;
+    object-fit: contain;
+    grid-area: 1 / 1 / -1 / 2;
+}
+
+.hide{
+    display: none;
+}
+
+.result{
+    width: 100%;
+    height: 20%;
 }
