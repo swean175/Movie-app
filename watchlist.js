@@ -16,7 +16,7 @@ watchList = checkDupliWatchList
        
       for (let i=0; i < watchList.length; i++ ){  //      ----------------------  adds html string for all items from watchlist
        updatedList.unshift(watchList[i])  //  ------------------- updates items from watchlist
-    html += `<div class="cell">${localStorage.getItem(watchList[i])}<button class="del" data-del="${watchList[i]}">remove</button></div>`
+    html += `<div class="cell"><button class="del" data-del="${watchList[i]}">remove</button>${localStorage.getItem(watchList[i])}</div>`
       }
 
     document.addEventListener('click',(e) => {

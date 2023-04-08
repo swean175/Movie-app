@@ -4,6 +4,8 @@ const inp = document.querySelector('input')
 const searchBtn = document.getElementById('search-btn')
 const bgIcon = document.querySelector(".background")
 let searchHistory = []
+let searchDisplay = []
+let titleIndex =[]
 let film = ''
 let searchedFilm = {}
 let watchList = JSON.parse(localStorage.getItem("watchlist")) //  -------------------getting watchlist data from local storage
@@ -35,23 +37,31 @@ film = `<section><img class="poster" src="${poster}" alt="poster ${title}"><div 
 searchedFilm = {title: title, // --------------- object witch searched title and string(html) data
     html: film}
 
-searchHistory.unshift(searchedFilm.html) //------------ ads object to search history
+titleIndex.unshift(searchedFilm.title)  //------------ ads title to title index
+
+searchHistory.unshift(searchedFilm) //------------ ads object to search history
+
+searchDisplay.unshift(searchedFilm.html) //------------ ads html to search Display
+
 render()
 }
 
+
 function render(){
-    document.getElementById('result').innerHTML = searchHistory
+    document.getElementById('result').innerHTML = searchDisplay
 }
+
 
 document.addEventListener('click', (e)=>{  //-------------------- click watchlist button event
 
     if ( e.target.attributes[0].value === "button"){
         if (searchedFilm.title !== undefined){
-            searchHistory.filter(title => title ==`<h3>${e.target.dataset.add}</h3>`)
-            console.log(searchHistory)
+            let ind = titleIndex.indexOf(`${e.target.dataset.add}`)
+     
              watchList.unshift(e.target.dataset.add)
        localStorage.setItem( "watchlist",`${JSON.stringify(watchList)}`) //  -------------  if event is equal type "button" ads this title to watchlist and saves in local storage
-       let store = new Movie(searchHistory[0])
+       let store = new Movie(searchHistory[ind])
+       console.log(store)
     store.save()} // ----------------  saves string (html) into local storage using class property function exported from class.js
 }})
 

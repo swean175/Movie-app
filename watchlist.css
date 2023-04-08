@@ -8,20 +8,36 @@ body{
 }
 
 h1{
+    display: block;
+    width: fit-content;
     text-align: center;
-    margin: 2em;
+    margin: 2em auto;
+    font-size: 3em;
+    letter-spacing: 0.3em;
+}
+
+section{
+    background: rgb(23, 22, 22);
+    padding: 2em;
+    margin-bottom: 2em;
+    border-right: 2px solid wheat;
+    border-left: 2px solid wheat;
+    height: 90%;
 }
 
 .get{
     display: flex;
     flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
     padding: 2em;
 }
 
 .cell{
-    flex-grow: 1;
+    flex-grow: 0;
     margin: 0;
     width: 20vw;
+    font-size: larger;
 }
 
 .top{
@@ -42,6 +58,66 @@ article{
     padding-left: 0;
 }
 
+h5,h3{
+    margin-right:1em;
+}
+
 .add{
     display: none;
+}
+
+.add-section h5{
+    display: none;
+}
+
+.del{
+    font-size: 1.3em;
+    font-weight: bold;
+    color:rgb(141, 25, 19);
+    border: none;
+    background:rgb(23, 22, 22);
+    padding: 0.5em;
+    border-right: 2px solid wheat;
+    border-left: 2px solid wheat;
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+.del:hover{
+    background-color: rgb(120, 119, 119);
+    cursor: pointer;
+    color:rgb(56, 14, 14);
+}
+@media (max-width:1200px ){
+section{
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+    .get{
+        flex-direction: column;
+       align-items: center;
+       padding: 0 0;
+    }
+    .poster{
+        min-height: 400px;
+        margin: 0 auto;
+    }
+
+    .cell{
+        width:60vw;
+    }
+}
+
+@media (max-width:600px ){
+    .get{
+        padding: 0.5em;
+    }
+
+    section{
+        height: fit-content;
+    }
+    .poster{
+        width: 150px;
+    }
 }
