@@ -15,7 +15,7 @@ if (watchList === null){
 
 
 searchBtn.addEventListener('click', () => {    //------------------------getting data from API and running searchResult()
-fetch (`http://www.omdbapi.com/?t=${inp.value}&page=2&apikey=f882b954&`)
+fetch (`https://www.omdbapi.com/?t=${inp.value}&page=2&apikey=f882b954&`)
 .then (res => res.json())
 .then (data => searchResult(data.Title,data.Year,data.imdbRating,data.Runtime,data.Genre,data.Plot,data.Poster))
 .catch (noResult())
